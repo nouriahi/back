@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: medecin-service
+          uri: lb://medecin-service
+          predicates:
+            - Path=/medecins/**
+        - id: secretaire-service
+          uri: lb://secretaire-service
+          predicates:
+            - Path=/secretaires/**
+    discovery:
+      locator:
+        enabled: true
+
+server:
+  port: 8888
