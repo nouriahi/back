@@ -7,6 +7,8 @@ import clinique.medecin.entities.MedecinSecretaire;
 @RepositoryRestResource
 public interface MedecinSecretaireRepository extends JpaRepository<MedecinSecretaire,Long>{
 
+	void deleteByMedecinId(Long id);
+
 	
 
 
