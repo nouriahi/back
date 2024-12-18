@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { KeycloakService } from './keycloak.service';
+import { KeycloakAngularModule } from 'keycloak-angular';
+import { APP_INITIALIZER } from '@angular/core';
+import { RouterModule } from '@angular/router';
+export function initializeKeycloak(keycloakService: KeycloakService) {
+  return (): Promise<void> => keycloakService.init();
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
-  
-
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [KeycloakAngularModule, RouterModule],
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'frontClinique';
-}
+export class AppComponent {}

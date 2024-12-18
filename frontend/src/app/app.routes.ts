@@ -9,18 +9,25 @@ import { UpdateMedecinComponent } from './update-medecin/update-medecin.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditSecretaireComponent } from './update-secretaire/update-secretaire.component';
 import { AffecterSecretaireComponent } from './affecter-secretaire/affecter-secretaire.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout-component/logout-component.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'ajout-medecin', component: AjoutMedecinComponent },
+  {path: 'ajout-medecin', component: AjoutMedecinComponent ,canActivate: [AuthGuard] },
   { path: 'secretaire-list', component: SecretaireListComponent },
   { path: 'ajout-secretaire', component: AjoutSecretaireComponent },
   { path: 'liste_Medecin', component: MedecinListComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'admin', component: DashboardComponent },
+  { path: 'access-denied', component: AccessDeniedComponent },
   { path:'assign-secretaire/:id',component:AffecterSecretaireComponent},
   { path: 'update-medecin/:id', component:UpdateMedecinComponent  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'secretaire-edit/:id', component: EditSecretaireComponent },
-  
-  
+
+
 
 ];
