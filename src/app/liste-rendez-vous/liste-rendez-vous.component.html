@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Liste des Rendez-vous</h2>     
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Patient</th>
+          <th>Médecin</th>
+          <th>Date</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rendezVous of rendezVousList">
+          <td>{{ rendezVous.id }}</td>
+          <td>{{ rendezVous.nom }} {{ rendezVous.prenom }}</td>
+          <td>{{ rendezVous.medecinId}}</td>
+          <td>{{ rendezVous.rendezVousDate}}</td>
+          <td>{{ rendezVous.status }}</td>
+          <td>
+            <button 
+              class="btn btn-success" 
+              (click)=" updateStatus(rendezVous.id, 'accepted')"
+              [disabled]="rendezVous.status === 'accepted'">
+              Accepter
+            </button>&nbsp;&nbsp;&nbsp;
+            <button 
+              class="btn btn-danger" 
+              (click)="updateStatus(rendezVous.id, 'rejected')"
+              [disabled]="rendezVous.status === 'rejected'">
+              Refuser
+            </button>&nbsp;&nbsp;&nbsp;
+                <button (click)="deleteRendezVous(rendezVous.id)" class="btn btn-danger">
+                  Supprimer
+                </button>
+              
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

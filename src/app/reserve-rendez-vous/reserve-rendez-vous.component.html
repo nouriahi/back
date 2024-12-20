@@ -1,0 +1,72 @@
+<div class="rendezvous-container">
+    <h2>Prendre un Rendez-vous</h2>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Nom du patient -->
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input
+          type="text"
+          id="nom"
+          [(ngModel)]="rendezvousForm.nom"
+          name="nom"
+          required
+        />
+      </div>
+  
+      <!-- Prénom du patient -->
+      <div class="form-group">
+        <label for="prenom">Prénom :</label>
+        <input
+          type="text"
+          id="prenom"
+          [(ngModel)]="rendezvousForm.prenom"
+          name="prenom"
+          required
+        />
+      </div>
+  
+      <!-- Email du patient -->
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="rendezvousForm.email"
+          name="email"
+          required
+        />
+      </div>
+  
+      <!-- Sélection du médecin -->
+      <div class="form-group">
+        <label for="medecin_id">Médecin :</label>
+        <select
+          id="medecin_id"
+          [(ngModel)]="rendezvousForm.medecinId"
+          name="medecin_id"
+          required
+        >
+          <option value="" disabled>-- Choisissez un médecin --</option>
+          <option *ngFor="let medecin of medecins" [value]="medecin.id">
+            {{ medecin.nom }} {{ medecin.prenom }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Date et heure du rendez-vous -->
+      <div class="form-group">
+        <label for="rendezvous_date">Date et Heure :</label>
+        <input
+          type="datetime-local"
+          id="rendezvous_date"
+          [(ngModel)]="rendezvousForm.rendezVousDate"
+          name="rendezvous_date"
+          required
+        />
+      </div>
+  
+      <!-- Bouton de soumission -->
+      <button type="submit">Prendre Rendez-vous</button>
+    </form>
+  </div>
+  

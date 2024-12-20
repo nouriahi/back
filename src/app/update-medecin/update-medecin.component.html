@@ -1,0 +1,79 @@
+<div class="form-section">
+  <div class="form">
+    <h2>Modifier Médecin</h2>
+    <form (ngSubmit)="handleUpdate()">
+      <div class="form-group-row">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            type="text"
+            id="nom"
+            placeholder="Nom"
+            [(ngModel)]="medecin.nom"
+            name="nom"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input
+            type="text"
+            id="prenom"
+            placeholder="Prénom"
+            [(ngModel)]="medecin.prenom"
+            name="prenom"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group-row">
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone</label>
+          <input
+            type="text"
+            id="telephone"
+            placeholder="Numéro de téléphone"
+            [(ngModel)]="medecin.tel"
+            name="telephone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Adresse email"
+            [(ngModel)]="medecin.email"
+            name="email"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="specialite">Spécialité</label>
+        <select id="specialite" [(ngModel)]="medecin.specialite" name="specialite" required>
+          <option value="" disabled>Sélectionner une spécialité</option>
+          <option value="Cardiologie">Cardiologie</option>
+          <option value="Dermatologie">Dermatologie</option>
+          <option value="Gynécologie">Gynécologie</option>
+          <option value="Pédiatrie">Pédiatrie</option>
+          <option value="Neurologie">Neurologie</option>
+          <option value="Orthopédie">Orthopédie</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="langues">Langues parlées</label>
+        <select id="langues" [(ngModel)]="medecin.langues" name="langues" required>
+          <option value="" disabled>Sélectionner une langue</option>
+          <option value="Français">Français</option>
+          <option value="Anglais">Anglais</option>
+          <option value="Espagnol">Espagnol</option>
+          <option value="Arabe">Arabe</option>
+          <option value="Allemand">Allemand</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Mettre à jour</button>
+    </form>
+  </div>
+</div>

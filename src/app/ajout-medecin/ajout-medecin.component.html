@@ -1,0 +1,262 @@
+<div class="container-scroller">
+  <link rel="preload" href="assets/fonts/materialdesignicons-webfont.woff2?v=3.7.95" as="font" type="font/woff2" crossorigin="anonymous" />
+
+
+  <!-- partial:partials/_navbar.html -->
+  <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo-mini" ><img src="assets/img/admin.png" alt="logo" /></a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="mdi mdi-menu"></span>
+      </button>
+      <div class="search-field d-none d-md-block">
+        <form class="d-flex align-items-center h-100" action="#">
+          <div class="input-group">
+            <div class="input-group-prepend bg-transparent">
+              <i class="input-group-text border-0 mdi mdi-magnify"></i>
+            </div>
+            <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+          </div>
+        </form>
+      </div>
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item nav-profile dropdown">
+          <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+            <div class="nav-profile-img">
+              <img src="assets/img/logo1.png" alt="image">
+              <span class="availability-status online"></span>
+            </div>
+
+          </a>
+
+        </li>
+        <li class="nav-item d-none d-lg-block full-screen-link">
+          <a class="nav-link">
+            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-email-outline"></i>
+            <span class="count-symbol bg-warning"></span>
+          </a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+            <i class="mdi mdi-bell-outline"></i>
+            <span class="count-symbol bg-danger"></span>
+          </a>
+
+        </li>
+        <li class="nav-item nav-logout d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-power"></i>
+          </a>
+        </li>
+        <li class="nav-item nav-settings d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-format-line-spacing"></i>
+          </a>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="nav-profile-image">
+              <img src="assets/img/logo1.png" alt="profile">
+              <span class="login-status online"></span>
+              <!--change to offline or busy as needed-->
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+              <span class="font-weight-bold mb-2">David Grey. H</span>
+              <span class="text-secondary text-small">Project Manager</span>
+            </div>
+            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="menu-title">Dashboard</span>
+            <i class="mdi mdi-home menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Medecin</span>
+            <i class="menu-arrow"></i>
+            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" [routerLink]="['/ajout-medecin']" routerLinkActive="router-link-active" >Ajouter Medecin</a></li>
+              <li class="nav-item"> <a class="nav-link" [routerLink]="['/liste_Medecin']" routerLinkActive="router-link-active" >Liste Medecin</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Sectretaire</span>
+            <i class="menu-arrow"></i>
+            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+          </a>
+          <div class="collapse" id="ui-basic1">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" [routerLink]="['/ajout-secretaire']" routerLinkActive="router-link-active" >Ajouter Sectretaire</a></li>
+              <li class="nav-item"> <a class="nav-link" [routerLink]="['/secretaire-list']" routerLinkActive="router-link-active" >liste Sectretaire</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="menu-title">Patient</span>
+            <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="menu-title">Les RDV'S</span>
+            <i class="mdi mdi-chart-bar menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span class="menu-title">Calendrier</span>
+            <i class="mdi mdi-table-large menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
+            <span class="menu-title">Sample Pages</span>
+            <i class="menu-arrow"></i>
+            <i class="mdi mdi-medical-bag menu-icon"></i>
+          </a>
+          <div class="collapse" id="general-pages">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link"> Blank Page </a></li>
+              <li class="nav-item"> <a class="nav-link"> Login </a></li>
+              <li class="nav-item"> <a class="nav-link" > Register </a></li>
+              <li class="nav-item"> <a class="nav-link" > 404 </a></li>
+              <li class="nav-item"> <a class="nav-link"> 500 </a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item sidebar-actions">
+          <span class="nav-link">
+            <div class="border-bottom">
+              <h6 class="font-weight-normal mb-3">Projects</h6>
+            </div>
+            <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+            <div class="mt-4">
+              <div class="border-bottom">
+                <p class="text-secondary">Categories</p>
+              </div>
+              <ul class="gradient-bullet-list mt-4">
+                <li>Free</li>
+                <li>Pro</li>
+              </ul>
+            </div>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="form-section">
+            <div class="illustration">
+              <img src="assets/img/admin.jpg" alt="Illustration" />
+            </div>
+            <div class="form">
+              <h2>Ajout Médecin</h2>
+            <form (ngSubmit)="handleSubmit()" #medecinForm="ngForm">
+
+
+                <!-- Champs du formulaire -->
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" placeholder="Nom" [(ngModel)]="medecinData.nom" name="nom" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" placeholder="Prénom" [(ngModel)]="medecinData.prenom" name="prenom" required />
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="tel">Numéro de téléphone</label>
+                    <input type="text" id="tel" placeholder="Numéro de téléphone" [(ngModel)]="medecinData.tel" name="tel" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" placeholder="Adresse email" [(ngModel)]="medecinData.email" name="email" required />
+                  </div>
+                </div>
+
+                <!-- Champ spécialité -->
+                <div class="form-group">
+                  <label for="specialite">Spécialité</label>
+                  <select id="specialite" [(ngModel)]="medecinData.specialite" name="specialite" required>
+                    <option value="" disabled selected>Sélectionner une spécialité</option>
+                    <option value="Cardiologie">Cardiologie</option>
+                    <option value="Dermatologie">Dermatologie</option>
+                    <option value="Gynécologie">Gynécologie</option>
+                    <option value="Pédiatrie">Pédiatrie</option>
+                    <option value="Neurologie">Neurologie</option>
+                    <option value="Orthopédie">Orthopédie</option>
+                  </select>
+                </div>
+
+                <!-- Champ description -->
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea id="description" placeholder="Entrez une description" [(ngModel)]="medecinData.description" name="description" required rows="5" cols="30"></textarea>
+                </div>
+
+                <!-- Langues (Cases à cocher) -->
+                <div class="form-group">
+                  <label for="langues">Langues</label>
+                  <div id="langues" class="checkbox-group">
+                    <div *ngFor="let langue of languesDisponibles">
+                      <input
+                        type="checkbox"
+                        [value]="langue"
+                        (change)="onLangueChange($event)"
+                        [checked]="medecinData.langues.includes(langue)" />
+                      <label>{{ langue }}</label>
+                    </div>
+                  </div>
+                </div>
+               <!---- <div class="form-group">
+                  <label for="secretaire">Sélectionner un secrétaire</label>
+                  <select id="secretaire" [(ngModel)]="selectedSecretaireId" name="secretaire" required>
+                    <option value="" disabled selected>Sélectionner un secrétaire</option>
+                    <option *ngFor="let secretaire of secretaireList" [value]="secretaire.id">{{ secretaire.nom }} {{ secretaire.prenom }}</option>
+                  </select>
+                </div>
+                 Bouton soumettre -->
+                <button type="submit" class="submit-btn">Soumettre</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+<!-- container-scroller -->
+
+
+
+
